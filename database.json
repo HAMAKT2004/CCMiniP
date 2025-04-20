@@ -12236,7 +12236,12 @@
             "email": "harsh2amrute@gmail.com",
             "password": "$2y$10$DdVXFUkG\/V98.AUAG\/zgiO4OOiz1XHLYjW5aUg.xGdIo3Uxd37ARC",
             "created_at": "2025-04-20 21:17:53",
-            "login_history": [],
+            "login_history": [
+                {
+                    "login_time": "2025-04-20 21:23:08",
+                    "logout_time": null
+                }
+            ],
             "weather_history": [
                 {
                     "timestamp": "2025-04-20T15:48:02.049Z",
