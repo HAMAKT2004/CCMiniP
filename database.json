@@ -5,7 +5,12 @@
             "email": "harsh1lol.hehe@gmail.com",
             "password": "$2y$10$A1T.vyOSSZOzUwTt3n21Fufvg5pZMUNkfRDu\/ivJf7ZuEdcr0EG2q",
             "created_at": "2025-04-20 16:56:58",
-            "login_history": []
+            "login_history": [
+                {
+                    "login_time": "2025-04-21 00:19:40",
+                    "logout_time": null
+                }
+            ]
         },
         {
             "username": "admin",
