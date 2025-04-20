@@ -6,7 +6,12 @@
             "email": "harsh1lol.hehe@gmail.com",
             "password": "$2y$10$5gEqAcXBA.PZDhe5\/kCJz.ZgDmJyxG2DOUNyPioXJ67OUzdi1DXsW",
             "created_at": "2025-04-20 21:11:51",
-            "login_history": [],
+            "login_history": [
+                {
+                    "login_time": "2025-04-20 21:14:21",
+                    "logout_time": null
+                }
+            ],
             "weather_history": [
                 {
                     "timestamp": "2025-04-20T15:41:57.118Z",
