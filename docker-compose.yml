@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php_weather_app
+    ports:
+      - "8081:80"
+    volumes:
+      - type: bind
+        source: .
+        target: /var/www/html
+    env_file:
+      - .env
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - WEATHER_API_KEY=${WEATHER_API_KEY}
+      - GOOGLE_APPS_SCRIPT_URL=${GOOGLE_APPS_SCRIPT_URL}
+    restart: unless-stopped
