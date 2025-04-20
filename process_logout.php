@@ -2,6 +2,7 @@
 session_start();
 require_once 'google_apps_script_config.php';
 require_once 'DatabaseHelper.php';
+require_once 'email_config.php';
 
 if (isset($_SESSION['username'])) {
     // Set timezone to IST

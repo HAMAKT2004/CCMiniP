@@ -6,7 +6,7 @@ require_once 'google_apps_script_config.php';
 function testGoogleAppsScriptNotification() {
     echo "<h2>Testing Google Apps Script Notification</h2>";
     
-    $testEmail = "harsh2amrute@gmail.com"; // Replace with your email for testing
+    $testEmail = "ham.akt2004@gmail.com"; // Email address for testing
     $testUsername = "TestUser";
     
     echo "<p>Sending test notification to: $testEmail</p>";
@@ -49,7 +49,7 @@ function testGoogleAppsScriptNotification() {
 function testCurlRequest() {
     echo "<h2>Testing with cURL</h2>";
     
-    $testEmail = "harsh2amrute@gmail.com"; // Replace with your email for testing
+    $testEmail = "ham.akt2004@gmail.com"; // Email address for testing
     $testUsername = "TestUser";
     
     $data = array(
@@ -115,7 +115,7 @@ function testAlternativeUrl() {
         
         echo "<p>Testing alternative URL: $alternativeUrl</p>";
         
-        $testEmail = "harsh2amrute@gmail.com"; // Replace with your email for testing
+        $testEmail = "ham.akt2004@gmail.com"; // Email address for testing
         $testUsername = "TestUser";
         
         $data = array(

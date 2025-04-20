@@ -1,0 +1,6 @@
+.env
+*.zip
+*.zip.Identifier
+vendor/
+.DS_Store
+*.log
