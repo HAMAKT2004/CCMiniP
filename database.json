@@ -1,1 +1,3 @@
-Hello dear!
+{
+    "newKey": "newValue"
+}
