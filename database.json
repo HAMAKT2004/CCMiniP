@@ -6127,7 +6127,12 @@
             "email": "brysondsoulalov123@gmail.com",
             "password": "$2y$10$UAKu96\/DFHE\/YSNbacEhS.02nCfWkrNoTT1tg\/56Jxts28iYGF1Qu",
             "created_at": "2025-04-21 12:27:54",
-            "login_history": [],
+            "login_history": [
+                {
+                    "login_time": "2025-04-21 12:28:50",
+                    "logout_time": null
+                }
+            ],
             "weather_history": [
                 {
                     "timestamp": "2025-04-21T06:58:03.036Z",
