@@ -1,3 +1,11 @@
 {
-    "users": []
+    "users": [
+        {
+            "username": "nnnn",
+            "email": "harsh2amrute@gmail.com",
+            "password": "$2y$10$dZmYX604rl7iT8xU6Y\/7GeDEvTRkN4GC9z5U6B5kP1\/RXx1JqOWyG",
+            "created_at": "2025-04-21 12:42:25",
+            "login_history": []
+        }
+    ]
 }
