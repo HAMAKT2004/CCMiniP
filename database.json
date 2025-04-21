@@ -5,7 +5,12 @@
             "email": "harsh2amrute@gmail.com",
             "password": "$2y$10$MBtmd9S4OARTXkFeTC93AOCrhC\/t11zBVxdkb9MeYo3.XTpn6Z0lG",
             "created_at": "2025-04-21 12:24:52",
-            "login_history": [],
+            "login_history": [
+                {
+                    "login_time": "2025-04-21 12:27:04",
+                    "logout_time": null
+                }
+            ],
             "weather_history": [
                 {
                     "timestamp": "2025-04-21T06:54:59.308Z",
