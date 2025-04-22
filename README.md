@@ -1,175 +1,184 @@
-# Weather Tracking and Attendance Notification System
+# 🌦️ WeatherWise: Your Personal Weather Tracking Dashboard
 
-A cloud-integrated, full-stack PHP web application providing secure user authentication, personalized weather tracking, and real-time attendance notifications. This project synergizes modern web development practices with cloud services, delivering a scalable and efficient solution for weather information and user activity tracking. Users can securely register, log in, track weather conditions, and receive notifications for their login and logout activities.
+[![PHP Version](https://img.shields.io/badge/PHP-%3E%3D%207.4-8892BF?style=flat-square&logo=php)](https://www.php.net/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Made With](https://img.shields.io/badge/Made%20with-Love%20%26%20PHP-red?style=flat-square)]()
 
-## Cloud Computing Overview
+WeatherWise is a dynamic web application designed to provide users with comprehensive weather information, coupled with a secure authentication system and personalized tracking features. Sign up, log in, explore real-time weather, forecasts, detailed insights, and even interact with an AI weather assistant, all while keeping track of your activity.
 
-This project showcases the integration of cloud-based technologies to create an attendance tracking system and weather data platform, enhanced with real-time email notifications. The key architectural elements are outlined below:
+---
 
-### Key Workflow Overview:
+## ✨ Key Features
 
-**User Authentication System (Core Component)**
+*   🔐 **Secure User Authentication:** Robust signup/login with password hashing and session management.
+*   📧 **Email Notifications:** Get notified via email on successful login/logout events (powered by Google Apps Script).
+*   ☀️ **Real-Time Weather:** Access current weather conditions for any city worldwide using the WeatherAPI.
+*   📊 **Detailed Weather Insights:** View comprehensive data including temperature, feels-like, wind, pressure, humidity, visibility, UV index, wind chill, heat index, and dew point.
+*   📅 **Forecast Data:** Get a 3-day weather forecast including daily summaries and hourly breakdowns.
+*   🌙 **Astronomy Info:** Check sunrise, sunset, moonrise, moonset, moon phase, and illumination.
+*   🔎 **Search History:** Keep track of your recent weather searches for quick access.
+*   🤖 **AI Weather Assistant:** Interact with a Gemini-powered chatbot for weather-related questions.
+*   📜 **Login History:** Review your past login and logout times.
+*   🎨 **Theme Toggle:** Switch between slick Light and Dark modes.
+*   📱 **Responsive Design:** Works seamlessly on desktop and mobile devices.
 
-- Upon visiting the site, users are prompted to either log in or sign up.
-- **Sign Up:** Users input a username, email address, and password. This information is securely stored in the Azure-hosted SQL database, employing best practices for data security.
-- **Log In:** Registered users can log in using their credentials, with secure session management implemented.
+---
 
-**Database Integration (Azure SQL Database)**
+## 🖼️ Screenshots (Placeholder)
 
-- **Service Type:** DBaaS (Database as a Service)
-- The Azure SQL Database securely stores:
-    - User credentials (passwords are securely hashed).
-    - Login and logout history with timestamps.
-    - Weather search history (cities searched by the user).
-- All data interactions are dynamic, ensuring persistence and security across user sessions.
+*Add screenshots here to showcase the application's interface.*
 
-**Landing Page (Main Dashboard)**
+<!--
+<p align="center">
+  <img src="path/to/screenshot1.png" width="45%" alt="Login Screen">
+     
+  <img src="path/to/screenshot2.png" width="45%" alt="Dashboard">
+</p>
+<p align="center">
+  <img src="path/to/screenshot3.png" width="45%" alt="Detailed Weather">
+     
+  <img src="path/to/screenshot4.png" width="45%" alt="Chatbot">
+</p>
+-->
 
-- Upon successful authentication, users are directed to the Landing Page, which features:
-    - **Weather Data:** Comprehensive weather conditions including temperature, humidity, pressure, wind speed, sunrise/sunset times, moon phases, and other astronomy data for any specified city.
-    - **Weather Search History:** A dynamically updated list of the user's past weather searches, retrieved from the cloud database.
-    - **Login History:** A detailed log of the user's login and logout activities, including exact timestamps for auditing and tracking.
-    - **About Us Section:** General information about the project and the development team.
+---
 
-**Email Notifications (Serverless Architecture)**
+## 🛠️ Tech Stack
 
-- An email notification is triggered each time a user logs in or logs out, providing a summary of their login status.
-- This functionality is powered by Google Apps Script, acting as a serverless function for sending email notifications.
-- **Service Type:** FaaS (Function as a Service)
-- Google Apps Script processes incoming triggers and sends notifications via SMTP or a chosen email service.
+*   **Backend:** PHP (>= 7.4)
+*   **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+*   **Data Storage:** JSON (Flat-file database)
+*   **APIs:**
+    *   [WeatherAPI.com](https://www.weatherapi.com/) (Weather Data)
+    *   [Google Apps Script](https://developers.google.com/apps-script) (Email Notifications)
+    *   [Google Gemini API](https://ai.google.dev/) (Chatbot)
+*   **Styling:** Custom CSS, Google Fonts (Poppins)
+*   **Icons:** FontAwesome
 
-**Containerization with Docker**
+---
 
-- The project is containerized using Docker, ensuring seamless execution across diverse systems by eliminating configuration issues and enhancing portability.
-- **Cloud Compatibility:** The Docker container can be deployed on IaaS platforms like Azure Virtual Machines or AWS EC2, facilitating scalability and management.
-- The Docker container encapsulates the complete application environment, including the web server, PHP, and necessary libraries, guaranteeing consistency across all environments.
+## 📂 Project Structure
+/
+├── database.json # User, login history, and weather history storage
+├── email_notifications.js # Google Apps Script for email (deploy separately)
+├── get_weather_history.php # API endpoint to retrieve user's weather history
+├── index.php # Login page / Entry point
+├── landing.html # Main dashboard template (rendered by landing.php)
+├── landing.php # Dashboard logic and rendering
+├── login.php # Handles login form submission
+├── process_logout.php # Handles user logout
+├── save_weather.php # API endpoint to save weather search data
+├── signup.php # Handles user registration form submission
+├── styles.css # Main stylesheet
+└── README.md # This file
+.
+└── .gitignore # Git ignore configuration
 
-**Cloud Hosting on Azure (PaaS)**
+---
 
-- The application is hosted on Microsoft Azure, leveraging PaaS (Platform as a Service) for simplified management and enhanced scalability.
-- Azure's PaaS services handle application deployment, scaling, and load balancing, ensuring high availability and optimal performance for users.
-- Azure SQL Database is utilized for persistent and secure storage of user data with robust access control.
+## 🚀 Setup & Installation
 
-## Key Features
+1.  **Prerequisites:**
+    *   Web Server (Apache, Nginx, etc.) with PHP >= 7.4 installed.
+    *   PHP JSON extension enabled (usually enabled by default).
+    *   Composer (recommended for potential future dependencies, though none currently required by `vendor`).
 
-**1. User Authentication and Account Management**
+2.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/your-username/WeatherWise.git # Replace with your repo URL
+    cd WeatherWise
+    ```
 
-- **Signup Process:** New users register by providing their username, email, and password. Passwords are securely hashed using PHP's `password_hash()` before storage in the database.
-- **Login Process:** Registered users log in with their credentials. Successful logins initiate secure session creation, allowing users to remain logged in until they explicitly log out.
-- **Login and Logout History:** The system meticulously records the exact timestamp of every login and logout action, visible to the user on the landing page for tracking purposes.
-- **Secure Password Storage:** Passwords are stored using PHP's `password_hash()` to ensure robust security even in the event of a database breach.
+3.  **Permissions:**
+    *   Ensure your web server has **write permissions** for the `database.json` file. This is crucial for registration, login tracking, and saving weather history.
+    ```bash
+    # Example (adjust user/group as needed, e.g., www-data, apache)
+    sudo chown www-data:www-data database.json
+    sudo chmod 664 database.json
+    ```
 
-**2. Weather Information**
+4.  **API Keys & Configuration:**
+    *   **WeatherAPI:** Sign up at [WeatherAPI.com](https://www.weatherapi.com/) to get a free API key. Replace the placeholder `'f878330c730d40abafd183919250704'` in `landing.html` with your actual key.
+    *   **Google Gemini API:** Get an API key from [Google AI Studio](https://aistudio.google.com/app/apikey). Replace the placeholder `'AIzaSyBAIUB5w8Bn9llRVCq9NKgyXsej0KQUtbQ'` in `landing.html` with your key.
+    *   **Google Apps Script (Email):**
+        *   Copy the code from `email_notifications.js` into a new Google Apps Script project ([script.google.com](https://script.google.com)).
+        *   Deploy the script as a Web App. **Important:** Set "Who has access" to "Anyone" (or "Anyone, even anonymous" depending on the GAS version) to allow your PHP script to call it.
+        *   Authorize the script to send emails on your behalf.
+        *   **Copy the deployed Web App URL.** You will need to modify the PHP code (likely in `login.php` and `process_logout.php`, although the calling part isn't shown in the provided files) to send POST requests to this URL when login/logout occurs.
 
-- **Real-time Weather Data:** Users can search for weather information for any city. The application retrieves current weather details, including temperature, humidity, pressure, wind speed, and other pertinent data from a weather API.
-- **3-Day Forecast:** Beyond real-time data, the system provides a 3-day weather forecast and hourly breakdowns to assist users in planning their activities effectively.
-- **Astronomy Data:** The application also presents astronomy data such as sunrise and sunset times, moon phases, and other celestial events for the searched city.
-- **Personalized Weather History:** The system maintains a record of the cities each user has searched for, displaying this history for easy access.
+    *   **(Security Note):** Storing API keys directly in client-side HTML/JS (`landing.html`) is **highly insecure** for production environments. Ideally, these keys should be stored securely on the server (e.g., environment variables, `.env` file - which *is* in your `.gitignore`) and accessed via PHP. The PHP backend should then make the API calls.
 
-**3. Email Notifications (Serverless Functionality)**
+5.  **Access the Application:**
+    *   Navigate to the project directory in your web browser (e.g., `http://localhost/WeatherWise/`).
 
-- **Login/Logout Notifications:** Upon each login or logout action, an automated email notification is sent to the user, summarizing their activity.
-- **Serverless Email Handler:** This notification service is powered by Google Apps Script, a serverless function that processes requests from the website and dispatches the appropriate notification email.
+---
 
-**4. User Interface**
+## 💡 Usage
 
-- **Responsive Design:** The application's UI is fully responsive, ensuring an optimal viewing and interaction experience across various devices, including desktops, tablets, and smartphones.
-- **Light/Dark Theme Support:** Users can switch between light and dark themes according to their personal preference.
-- **Interactive History Table:** Weather and login history are presented in interactive tables, facilitating easy review of past activities and searches.
-- **FontAwesome Icons:** The UI incorporates FontAwesome icons to enhance user experience and provide intuitive navigation.
+1.  Navigate to the application URL. You'll be directed to the login page (`index.php`).
+2.  If you don't have an account, click the "Sign Up" link.
+3.  Register using a username, email, and password.
+4.  Log in with your newly created credentials.
+5.  You'll land on the dashboard (`landing.php`).
+6.  Use the **Weather** tab to search for cities and view current conditions and search history.
+7.  Explore the **Detailed Weather** tab for forecasts, astronomy, and hourly breakdowns.
+8.  Check your **Login History** in the corresponding tab.
+9.  Learn about the project and developers in the **About** tab.
+10. Use the floating **Chatbot** button to ask the AI assistant weather-related questions.
+11. Toggle the **Dark/Light Theme** using the moon/sun icon.
+12. **Logout** using the button in the header.
 
-## Technology Stack
+---
 
-**Backend**
+## 🔒 Security Considerations
 
-- **PHP:** Handles server-side logic, user authentication, and database interactions.
-- **Docker:** Containerizes the application for consistent deployment across different environments.
+*   **Password Hashing:** User passwords are securely hashed using PHP's `password_hash()` (likely BCRYPT algorithm, based on the hash format in `database.json`).
+*   **Session Management:** PHP sessions are used to maintain user login state.
+*   **API Key Security:** As noted in Setup, API keys in the provided `landing.html` are exposed client-side. **This is a security risk.** Implement server-side handling for API keys in a real-world application.
+*   **Data Storage:** Using a JSON file for data is simple but less secure and performant than a traditional database for larger applications or sensitive data. File permissions are critical.
+*   **Input Sanitization:** (Assumption) Ensure all user inputs (signup, login, city search) are properly validated and sanitized server-side to prevent XSS and other injection attacks.
 
-**Frontend**
+---
 
-- **HTML5/CSS3:** Creates a responsive and clean user interface.
-- **JavaScript:** Implements dynamic features such as theme switching and interactive tables.
+## 💾 Data Storage
 
-**Cloud Services**
+This application uses a simple flat-file approach for data persistence, storing all user information, login history, and weather search history within the `database.json` file.
 
-- **Azure SQL Database (DBaaS):** Stores user information, login history, and weather search history.
-- **Google Apps Script (FaaS):** Manages email notifications triggered by user login/logout actions.
+*   **Pros:** Simplicity, no database server required.
+*   **Cons:** Not suitable for high concurrency, potential performance issues with large amounts of data, requires careful file permission management for security.
 
-**APIs**
+---
 
-- **Weather API:** Fetches real-time weather data and forecasts.
+## 🤝 Contributing
 
-**Containerization & Deployment**
+Contributions are welcome! If you'd like to improve WeatherWise:
 
-- **Docker:** Ensures consistent deployment across various environments.
-- **Azure:** Hosts the application, providing scalability and high availability.
+1.  Fork the repository.
+2.  Create a new branch (`git checkout -b feature/YourFeatureName`).
+3.  Make your changes.
+4.  Commit your changes (`git commit -m 'Add some feature'`).
+5.  Push to the branch (`git push origin feature/YourFeatureName`).
+6.  Open a Pull Request.
 
-## Project Structure
+Please ensure your code adheres to basic PHP best practices and includes comments where necessary.
 
+---
 
-php_login_system/
-├── get_weather_history.php   # Retrieves weather data and user history
-├── index.php                 # Entry point (Login page)
-├── landing.html              # Main dashboard UI with weather and history
-├── landing.php               # Handles weather data and history retrieval
-├── login.php                 # Handles user login functionality
-├── process_landing.php       # Processes user requests on the dashboard
-├── process_logout.php        # Handles user logout and triggers email
-├── save_weather.php          # Saves user weather search data
-├── signup.php                # New user registration and validation
-└── styles.css                # Styling for the UI
+## 🧑‍💻 Developers
 
-## Setup Instructions
+*   Harsh Amrute
+*   Ayush Bhosale
+*   Peter Bose
+*   Bryson D'Souza
 
-**Prerequisites**
+---
 
-- PHP 7.x or higher
-- Web server (Apache or Nginx)
-- Docker (for containerization)
-- Configured and accessible Azure SQL Database
-- Linked Google Apps Script for email functionality
+## 📄 License
 
-**Installation**
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file (or the badge link) for details.
 
-1. Clone or download the repository to your local machine.
-2. Configure the Azure SQL Database connection strings in the PHP files.
-3. Set up Google Apps Script to handle email notifications.
-4. Use Docker to build the container and deploy on local environments or cloud platforms.
-5. Deploy the project on Microsoft Azure for scalable hosting.
+---
 
-**Configuration**
+## #️⃣ Tags
 
-- Add the Weather API key in the appropriate section of `landing.html`.
-- Ensure your Google Apps Script endpoint is correctly configured to trigger email notifications.
-
-## How to Use
-
-- **Register:** Navigate to `signup.php`, enter your details, and create an account.
-- **Log In:** Use your registered credentials to log in to the application.
-- **Weather Search:** Enter the name of any city to retrieve live weather information and forecasts.
-- **View History:** Access your past weather searches and login/logout history.
-- **Toggle Themes:** Switch between light and dark themes based on your preference.
-- **Logout:** Log out of the application to end your session and receive an email notification about your logout activity.
-
-## Contributors
-
-- Harsh Amrute
-- Ayush Bhosale
-- Peter Bose
-- Bryson D'Souza
-
-## Security Features
-
-- **Password Security:** Passwords are securely hashed using `password_hash()` to prevent unauthorized access.
-- **Session Management:** User sessions are securely maintained, ensuring only authenticated users can access the platform.
-- **Data Validation:** Input data is rigorously validated and sanitized to prevent injection and other security vulnerabilities.
-- **Email Notifications:** Login and logout events are securely handled, with notifications sent via Google Apps Script to ensure real-time tracking and communication of user activity.
-
-## Future Enhancements
-
-- Password Reset Functionality: Implement a feature for users to reset forgotten passwords.
-- Email Verification: Add email verification during signup to ensure legitimate registrations.
-- Advanced Forecasts: Provide extended weather forecasts and additional city-specific data.
-- Location-Based Weather: Automatically detect the user's location and display weather data for their current city.
-- Weather History Export: Allow users to download their weather search history in a CSV format.
-
+`php` `weather-app` `user-authentication` `weather-api` `json-database` `javascript` `css` `html` `dark-theme` `light-theme` `chatbot` `google-gemini` `google-apps-script` `forecast` `login-history` `php-sessions` `password-hashing`
